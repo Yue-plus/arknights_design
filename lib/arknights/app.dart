@@ -1,6 +1,11 @@
 import 'package:flutter/widgets.dart';
 
+import 'colors.dart';
+
 /// 使用明日方舟为主题设计的应用程序。
+///
+/// 一个方便的小部件，它封装了明日方舟主题设计应用程序目标常用的小部件。
+/// 基于 [WidgetsApp] 封装。
 class ArknightsApp extends StatefulWidget {
   /// 创建一个 ArknightsApp。
   const ArknightsApp({
@@ -25,7 +30,15 @@ class _ArknightsAppState extends State<ArknightsApp> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Center(
+      child: Text(
+        widget.title,
+        textDirection: TextDirection.ltr,
+        style: const TextStyle(
+          color: ArknightsColors.arkBlue,
+          fontSize: 32,
+        ),
+      ),
+    );
   }
 }
