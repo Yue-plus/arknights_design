@@ -1,5 +1,5 @@
 name: arknights_design
-description: 明日方舟设计 UI 库
+description: 明日方舟主题设计 Dart/Flutter UI 库
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

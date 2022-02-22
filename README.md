@@ -1,6 +1,6 @@
 # arknights_design
 
-明日方舟为主题设计的 UI 库，正在开发中……
+明日方舟主题设计 Dart/Flutter UI 库，正在开发中……
 
 ## Getting Started
 
