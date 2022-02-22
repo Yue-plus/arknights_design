@@ -1,13 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'arknights.dart';
 
 void main() {
   runApp(
-    const Center(
-      child: Text(
-        'Arknights Design',
-        textDirection: TextDirection.ltr,
-        style: TextStyle(fontSize: 32),
-      ),
+    const ArknightsApp(
+      title: 'Arknights Design',
     ),
   );
 }
