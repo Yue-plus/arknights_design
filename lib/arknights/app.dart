@@ -2,6 +2,24 @@ import 'package:flutter/widgets.dart';
 
 import 'colors.dart';
 
+/// [ArknightsApp] 使用这个 [TextStyle] 作为 [DefaultTextStyle]
+/// 来鼓励开发者有意识地定义自己的 [DefaultTextStyle]。
+///
+/// 在明日方舟主题设计中，大多数 [Text] Widget 都包含在 [Arknights] Widget 中，
+/// 它们预设了特定的 [DefaultTextStyle]。
+/// 如果你看到使用此文本样式的文本，请考虑将文本放入 [Arknights] Widget 中
+/// （或者另外声明一个 [DefaultTextStyle] Widget）。
+const TextStyle _errorTextStyle = TextStyle(
+  color: Color(0xD0FF0000),
+  fontFamily: 'monospace',
+  fontSize: 48.0,
+  fontWeight: FontWeight.w900,
+  decoration: TextDecoration.underline,
+  decorationColor: Color(0xFFFFEE22),
+  decorationStyle: TextDecorationStyle.double,
+  debugLabel: '应急样式；考虑把你的文字放到一个明日方舟主题设计 Widget 里',
+);
+
 /// 使用明日方舟为主题设计的应用程序。
 ///
 /// 一个方便的小部件，它封装了明日方舟主题设计应用程序目标常用的小部件。
@@ -17,7 +35,10 @@ class ArknightsApp extends StatefulWidget {
     this.onGenerateRoute,
     this.onGenerateInitialRoutes,
     this.onUnknownRoute,
+    List<NavigatorObserver> this.navigatorObservers = const <NavigatorObserver>[],
+    this.builder,
     this.title = '',
+    this.onGenerateTitle,
   }) : super(key: key);
 
   /// {@macro flutter.widgets.widgetsApp.navigatorKey}
@@ -47,10 +68,21 @@ class ArknightsApp extends StatefulWidget {
   /// {@macro flutter.widgets.widgetsApp.onUnknownRoute}
   final RouteFactory? onUnknownRoute;
 
+  /// {@macro flutter.widgets.widgetsApp.navigatorObservers}
+  final List<NavigatorObserver>? navigatorObservers;
+
+  /// {@macro flutter.widgets.widgetsApp.builder}
+  final TransitionBuilder? builder;
+
   /// {@macro flutter.widgets.widgetsApp.title}
   ///
   /// 此值未经修改地传递给 [WidgetsApp.title].
   final String title;
+
+  /// {@macro flutter.widgets.widgetsApp.onGenerateTitle}
+  ///
+  /// 此值未经修改地传递给 [WidgetsApp.onGenerateTitle].
+  final GenerateAppTitle? onGenerateTitle;
 
   @override
   State<StatefulWidget> createState() => _ArknightsAppState();
@@ -65,24 +97,18 @@ class _ArknightsAppState extends State<ArknightsApp> {
   Widget _buildWidgetApp(BuildContext context) {
     return WidgetsApp(
       navigatorKey: widget.navigatorKey,
+      navigatorObservers: widget.navigatorObservers!,
       home: widget.home,
       routes: widget.routes!,
       initialRoute: widget.initialRoute,
       onGenerateRoute: widget.onGenerateRoute,
       onGenerateInitialRoutes: widget.onGenerateInitialRoutes,
       onUnknownRoute: widget.onUnknownRoute,
-      color: ArknightsColors.arkBlue,
-      builder: (context, title) => Center(
-        child: Text(
-          widget.title,
-          textDirection: TextDirection.ltr,
-          style: const TextStyle(
-            color: ArknightsColors.arkBlue,
-            fontSize: 32,
-          ),
-        ),
-      ),
+      builder: widget.builder,
       title: widget.title,
+      onGenerateTitle: widget.onGenerateTitle,
+      textStyle: _errorTextStyle,
+      color: ArknightsColors.arkBlue,
     );
   }
 
