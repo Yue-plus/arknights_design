@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'colors.dart';
+import 'page.dart';
 // import 'theme.dart';
 
 /// [ArknightsApp] 使用这个 [TextStyle] 作为 [DefaultTextStyle]
@@ -113,7 +114,7 @@ class ArknightsApp extends StatefulWidget {
   ///
   /// 此属性的默认值是 [ThemeData.light()] 的值。
   ///
-  /// 也可以看看：
+  /// 另见：
   ///
   ///  * [themeMode]：控制要使用的主题。
   ///  * [MediaQueryData.platformBrightness]：指示平台所需的主题，
@@ -149,6 +150,10 @@ class _ArknightsAppState extends State<ArknightsApp> {
     return WidgetsApp(
       navigatorKey: widget.navigatorKey,
       navigatorObservers: widget.navigatorObservers!,
+      // TODO ArknightsPageRoute<T>
+      // pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
+      //   return ArknightsPageRoute<T>(settings: settings, builder: builder);
+      // },
       home: widget.home,
       routes: widget.routes!,
       initialRoute: widget.initialRoute,
