@@ -150,10 +150,8 @@ class _ArknightsAppState extends State<ArknightsApp> {
     return WidgetsApp(
       navigatorKey: widget.navigatorKey,
       navigatorObservers: widget.navigatorObservers!,
-      // TODO ArknightsPageRoute<T>
-      // pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
-      //   return ArknightsPageRoute<T>(settings: settings, builder: builder);
-      // },
+      pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) =>
+          ArknightsPageRoute<T>(settings: settings, builder: builder),
       home: widget.home,
       routes: widget.routes!,
       initialRoute: widget.initialRoute,
