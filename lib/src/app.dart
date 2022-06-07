@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 
 import 'colors.dart';
 import 'page.dart';
-// import 'theme.dart';
 
 /// [ArknightsApp] 使用这个 [TextStyle] 作为 [DefaultTextStyle]
 /// 来鼓励开发者有意识地定义自己的 [DefaultTextStyle]。
@@ -50,7 +49,7 @@ class ArknightsApp extends StatefulWidget {
     this.onGenerateInitialRoutes,
     this.onUnknownRoute,
     List<NavigatorObserver> this.navigatorObservers =
-        const <NavigatorObserver>[],
+    const <NavigatorObserver>[],
     this.builder,
     this.title = '',
     this.onGenerateTitle,
@@ -144,8 +143,8 @@ class _ArknightsAppState extends State<ArknightsApp> {
     // 这样做是为了简化切换主题的技术细节，它被认为是可以接受的，
     // 因为这个颜色属性只在旧版 Android 系统上用于在 Android 的切换 UI 中为 appbar 着色。
     //
-    // 方舟蓝（0xff22bbff）为默认主题的主要颜色。
-    final Color arknightsColor = widget.color ?? ArknightsColors.arkBlue;
+    // 蓝色（0xFF22BBFF）为默认主题的主要颜色。
+    final Color arknightsColor = widget.color ?? ArknightsColors.blue;
 
     return WidgetsApp(
       navigatorKey: widget.navigatorKey,
