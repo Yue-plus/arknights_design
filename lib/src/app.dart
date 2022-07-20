@@ -61,6 +61,12 @@ class ArknightsApp extends StatefulWidget {
     // this.highContrastDarkTheme,
     // this.themeMode = ThemeMode.system,
     this.locale,
+    this.showPerformanceOverlay = false,
+    this.checkerboardRasterCacheImages = false,
+    this.checkerboardOffscreenLayers = false,
+    this.showSemanticsDebugger = false,
+    this.debugShowWidgetInspector = false,
+    this.debugShowCheckedModeBanner = true,
   }) : super(key: key);
 
   /// {@macro flutter.widgets.widgetsApp.navigatorKey}
@@ -128,6 +134,44 @@ class ArknightsApp extends StatefulWidget {
   /// {@macro flutter.widgets.widgetsApp.locale}
   final Locale? locale;
 
+  /// 打开性能图层。
+  ///
+  /// 另见：
+  ///
+  ///  * <https://flutter.dev/debugging/#performance-overlay>
+  final bool showPerformanceOverlay;
+
+  /// 棋盘格光栅缓存图像。
+  ///
+  /// 另见：[PerformanceOverlay.checkerboardRasterCacheImages].
+  final bool checkerboardRasterCacheImages;
+
+  /// 棋盘层渲染到屏幕外位图。
+  ///
+  /// 另见： [PerformanceOverlay.checkerboardOffscreenLayers].
+  final bool checkerboardOffscreenLayers;
+
+  /// 打开显示框架报告的可访问性信息的叠加层。
+  final bool showSemanticsDebugger;
+
+  /// 打开允许检查小部件树的覆盖。检查器仅在调试模式下可用，因为它取决于不应在调试模式之外调用的
+  /// [RenderObject.debugDescribeChildren]。
+  final bool debugShowWidgetInspector;
+
+  /// {@template flutter.widgets.widgetsApp.debugShowCheckedModeBanner}
+  /// 在调试模式下打开一个小的“DEBUG”横幅，以指示应用程序处于调试模式。
+  /// 这是默认打开的（在调试模式下），要关闭它，请将构造函数参数设置为 false。
+  /// 在发布模式下，这不起作用。
+  ///
+  /// 如果不使用 WidgetsApp，要在应用程序中获取此横幅，请在应用程序中包含一个
+  /// [CheckedModeBanner] Widget。
+  ///
+  /// 此横幅旨在阻止人们抱怨应用在调试模式下运行缓慢。
+  /// 在调试模式下，Flutter 启用了大量昂贵的诊断来帮助开发，
+  /// 因此调试模式下的性能并不代表发布模式下的性能表现。
+  /// {@endtemplate}
+  final bool debugShowCheckedModeBanner;
+
   @override
   State<StatefulWidget> createState() => _ArknightsAppState();
 }
@@ -163,6 +207,12 @@ class _ArknightsAppState extends State<ArknightsApp> {
       textStyle: _errorTextStyle,
       color: arknightsColor,
       locale: widget.locale,
+      showPerformanceOverlay: widget.showPerformanceOverlay,
+      checkerboardRasterCacheImages: widget.checkerboardRasterCacheImages,
+      checkerboardOffscreenLayers: widget.checkerboardOffscreenLayers,
+      showSemanticsDebugger: widget.showSemanticsDebugger,
+      debugShowWidgetInspector: widget.debugShowWidgetInspector,
+      debugShowCheckedModeBanner: widget.debugShowCheckedModeBanner,
     );
   }
 
