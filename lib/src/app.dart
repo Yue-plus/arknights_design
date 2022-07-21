@@ -11,12 +11,12 @@ import 'page.dart';
 /// 如果你看到使用此文本样式的文本，请考虑将文本放入 [Arknights] Widget 中
 /// （或者另外声明一个 [DefaultTextStyle] Widget）。
 const TextStyle _errorTextStyle = TextStyle(
-  color: Color(0xD0FF0000),
+  color: ArknightsColors.blue,
   fontFamily: 'monospace',
   fontSize: 48.0,
   fontWeight: FontWeight.w900,
   decoration: TextDecoration.underline,
-  decorationColor: Color(0xFFFFEE22),
+  decorationColor: ArknightsColors.yellow,
   decorationStyle: TextDecorationStyle.double,
   debugLabel: '应急样式；考虑把你的文字放到一个明日方舟主题设计 Widget 里',
 );
