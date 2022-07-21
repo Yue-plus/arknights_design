@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   arknights_design:
-    path: ../arknights_design
+    path: ./arknights_design
     # git:
     #   url: https://github.com/Yue-plus/arknights_design
   # https://pub.dev/packages/fluent_ui

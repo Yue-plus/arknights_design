@@ -32,15 +32,18 @@ class DemoApp extends StatelessWidget {
                 if (kDebugMode) { print('Home'); }
               }
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8),
-              child: SquareButton(
+            SquareButton(
                 icons: FluentIcons.info,
                 width: null,
                 onPressed: () {
                   if (kDebugMode) { print('Info'); }
                 }
-              ),
+            ),
+            IconButton(
+              FluentIcons.mail_solid,
+              onPressed: () {
+                if (kDebugMode) { print('mail'); }
+              },
             ),
           ]),
           // title: Text('Arknights AppBar Title'),

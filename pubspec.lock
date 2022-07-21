@@ -4,7 +4,7 @@ packages:
   arknights_design:
     dependency: "direct main"
     description:
-      path: "../arknights_design"
+      path: arknights_design
       relative: true
     source: path
     version: "0.0.1"
