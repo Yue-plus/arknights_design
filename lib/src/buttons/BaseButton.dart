@@ -1,19 +1,23 @@
 import 'package:arknights_design/arknights_design.dart';
 
-/// 其他按钮的基类，不应当直接调用。
-class BaseButton extends StatefulWidget {
+/// {@template fluent_ui.buttons.base}
+/// 按钮为人们提供了一种触发动作的方式。它们通常出现在表单、对话框面板和对话框中。
+/// {@end-template}
+abstract class BaseButton extends StatefulWidget {
   const BaseButton({
     Key? key,
-    required this.child,
     this.onPressed,
     this.onLongPressed,
     this.onHover,
+    required this.child,
   }) : super(key: key);
 
-  final Widget child;
+
   final VoidCallback? onPressed;
   final VoidCallback? onLongPressed;
+
   final VoidCallback? onHover;
+  final Widget child;
 
   @override
   State<StatefulWidget> createState() => _BaseButtonState();
