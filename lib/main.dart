@@ -1,5 +1,6 @@
 import 'package:arknights_design/arknights_design.dart';
 import 'package:fluent_ui/fluent_ui.dart' show FluentIcons;
+import 'package:flutter/foundation.dart';
 
 class DemoApp extends StatelessWidget {
   const DemoApp({Key? key}) : super(key: key);
@@ -16,14 +17,38 @@ class DemoApp extends StatelessWidget {
     return ArknightsApp(
       title: 'Arknights Design',
       home: ArknightsPageScaffold(
-        appBar: const ArknightsAppBar(
-          leading: Icon(FluentIcons.add, color: ArknightsColors.white),
-          title: Text('Arknights AppBar Title'),
-          actions: [
-            Icon(FluentIcons.plug_connected, color: ArknightsColors.white),
-            Icon(FluentIcons.pill, color: ArknightsColors.white),
-            Icon(FluentIcons.release_gate, color: ArknightsColors.white),
-          ],
+        appBar: ArknightsAppBar(
+          leading: Row(children: [
+            SquareButton(
+              icons: FluentIcons.chevron_left,
+              onPressed: () {
+                if (kDebugMode) { print('Back'); }
+              },
+            ),
+            SquareButton(
+              icons: FluentIcons.home_solid,
+              width: 168,
+              onPressed: () {
+                if (kDebugMode) { print('Home'); }
+              }
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: SquareButton(
+                icons: FluentIcons.info,
+                width: null,
+                onPressed: () {
+                  if (kDebugMode) { print('Info'); }
+                }
+              ),
+            ),
+          ]),
+          // title: Text('Arknights AppBar Title'),
+          // actions: [
+          //   Icon(FluentIcons.plug_connected, color: ArknightsColors.white),
+          //   Icon(FluentIcons.pill, color: ArknightsColors.white),
+          //   Icon(FluentIcons.release_gate, color: ArknightsColors.white),
+          // ],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -50,10 +75,11 @@ class DemoApp extends StatelessWidget {
                 _rowIcon(ArknightsIcons.tank),
                 _rowIcon(ArknightsIcons.warrior),
               ],
-            )
+            ),
           ],
         ),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
