@@ -40,17 +40,18 @@ class _SquareButtonStatus extends State<SquareButton> {
       child: AnimatedContainer(
         width: widget.width,
         height: 42,
-        // margin: const EdgeInsetsGeometryTween(),
+        margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: !isActive ? widget.color : ArknightsColors.gray,
-          boxShadow: widget.boxShadow ?? [
-            BoxShadow(
-              color: !isActive ? widget.shadowColor : ArknightsColors.white,
-              offset: const Offset(2, 12),
-              blurRadius: 8,
-            ),
-          ],
+          boxShadow: widget.boxShadow ??
+              [
+                BoxShadow(
+                  color: !isActive ? widget.shadowColor : ArknightsColors.white,
+                  offset: const Offset(2, 12),
+                  blurRadius: 8,
+                )
+              ],
         ),
         duration: const Duration(milliseconds: 30),
         child: Row(
@@ -63,7 +64,9 @@ class _SquareButtonStatus extends State<SquareButton> {
                 widget.text,
                 style: const TextStyle(
                   color: ArknightsColors.white,
-                  fontSize: 21
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal,
+                  decoration: TextDecoration.none,
                 ),
               ),
           ],
@@ -74,7 +77,8 @@ class _SquareButtonStatus extends State<SquareButton> {
 }
 
 class SquareButtonsGroup extends StatefulWidget {
-  const SquareButtonsGroup({Key? key, required this.children}) : super(key: key);
+  const SquareButtonsGroup({Key? key, required this.children})
+      : super(key: key);
 
   final List<SquareButton> children;
 

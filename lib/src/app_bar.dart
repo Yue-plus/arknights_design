@@ -21,14 +21,11 @@ class ArknightsAppBar extends StatefulWidget {
 
 class _ArknightsAppBarState extends State<ArknightsAppBar> {
   Widget leading(BuildContext context) {
-    if (widget.leading != null) {
-      return widget.leading!;
-    } else {
-      return SquareButton(
-        icons: FluentIcons.back,
-        onPressed: () => Navigator.pop(context),
-      );
-    }
+    return widget.leading ??
+        SquareButton(
+          icons: FluentIcons.back,
+          onPressed: () => Navigator.pop(context),
+        );
   }
 
   @override
