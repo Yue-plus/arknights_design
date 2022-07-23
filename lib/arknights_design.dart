@@ -1,5 +1,9 @@
 library arknights_design;
 
+export 'package:fluent_ui/fluent_ui.dart' show FluentIcons;
+export 'package:flutter/material.dart' show Icons;
+export 'package:flutter/cupertino.dart' show CupertinoIcons;
+
 export 'src/app.dart';
 export 'src/appBar.dart';
 export 'src/buttons/BaseButton.dart';
