@@ -27,10 +27,8 @@ class _ArknightsAppBarState extends State<ArknightsAppBar> {
       style: widget.appBarTextStyle,
       child: Row(
         children: [
-          if (widget.leading != null)
-            Padding(padding: const EdgeInsets.all(8), child: widget.leading!),
-          if (widget.title != null)
-            Expanded(child: widget.title!),
+          if (widget.leading != null) widget.leading!,
+          if (widget.title != null) Expanded(child: widget.title!),
           if (widget.actions != null && widget.actions!.isNotEmpty)
             Row(children: widget.actions!),
         ],

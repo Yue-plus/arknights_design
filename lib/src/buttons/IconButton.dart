@@ -20,8 +20,7 @@ class IconButtonStatus extends State<IconButton> {
       onTapDown: (_) => setState(() => isActive = true),
       onTapUp: (_) => setState(() => isActive = false),
       child: AnimatedContainer(
-        margin: const EdgeInsets.only(left: 8),
-        padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+        padding: const EdgeInsets.all(8),
         duration: const Duration(seconds: 1),
         child: Icon(
           widget.iconData,

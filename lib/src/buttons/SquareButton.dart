@@ -28,34 +28,36 @@ class SquareButton extends StatefulWidget {
 }
 
 class _SquareButtonStatus extends State<SquareButton> {
+  bool isActive = false;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onPressed,
       onLongPress: widget.onLongPressed,
-      child: Container(
+      onTapDown: (_) => setState(() => isActive = true),
+      onTapUp: (_) => setState(() => isActive = false),
+      child: AnimatedContainer(
         width: widget.width,
         height: 42,
-        margin: const EdgeInsets.only(left: 8),
-        padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+        // margin: const EdgeInsetsGeometryTween(),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: widget.color,
+          color: !isActive ? widget.color : ArknightsColors.gray,
           boxShadow: widget.boxShadow ?? [
             BoxShadow(
-              color: widget.shadowColor,
+              color: !isActive ? widget.shadowColor : ArknightsColors.white,
               offset: const Offset(2, 12),
               blurRadius: 8,
             ),
           ],
         ),
+        duration: const Duration(milliseconds: 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.icons != null)
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Icon(widget.icons, color: ArknightsColors.white),
-              ),
+              Icon(widget.icons, color: ArknightsColors.white),
             if (widget.text != "")
               Text(
                 widget.text,

@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'colors.dart';
+import 'package:arknights_design/arknights_design.dart';
 
 enum _ArknightsPageScaffoldSlot { appbar, body }
 
