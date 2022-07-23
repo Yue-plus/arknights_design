@@ -63,6 +63,7 @@ class _SquareButtonStatus extends State<SquareButton> {
                 widget.text,
                 style: const TextStyle(
                   color: ArknightsColors.white,
+                  fontSize: 21
                 ),
               ),
           ],

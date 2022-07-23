@@ -5,10 +5,10 @@ export 'package:flutter/material.dart' show Icons;
 export 'package:flutter/cupertino.dart' show CupertinoIcons;
 
 export 'src/app.dart';
-export 'src/appBar.dart';
-export 'src/buttons/BaseButton.dart';
-export 'src/buttons/IconButton.dart';
-export 'src/buttons/SquareButton.dart';
+export 'src/app_bar.dart';
+export 'src/buttons/base_button.dart';
+export 'src/buttons/icon_button.dart';
+export 'src/buttons/square_button.dart';
 export 'src/colors.dart';
 export 'src/icons.dart';
 export 'src/page.dart';
