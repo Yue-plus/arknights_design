@@ -1,9 +1,11 @@
 import 'package:arknights_design/arknights_design.dart';
 
 class IconButton extends StatefulWidget {
-  const IconButton(this.iconData, {Key? key, this.onPressed}) : super(key: key);
+  const IconButton(this.iconData, {Key? key, this.size, this.color, this.onPressed}) : super(key: key);
 
   final IconData iconData;
+  final double? size;
+  final Color? color;
   final VoidCallback? onPressed;
 
   @override
@@ -24,7 +26,7 @@ class IconButtonStatus extends State<IconButton> {
         duration: const Duration(seconds: 1),
         child: Icon(
           widget.iconData,
-          size: 36,
+          size: widget.size ?? 36,
           color: !isActive ? ArknightsColors.white : ArknightsColors.gray,
           shadows: const [
             BoxShadow(

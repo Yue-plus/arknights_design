@@ -43,3 +43,38 @@ class _ArknightsAppBarState extends State<ArknightsAppBar> {
     );
   }
 }
+
+class ArknightsAppBarTitle extends StatelessWidget {
+  const ArknightsAppBarTitle({Key? key, this.icon, this.title})
+      : super(key: key);
+
+  final IconData? icon;
+  final String? title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      Container(
+        margin: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
+        color: const Color(0xF1FFFFFF),
+        child: Row(children: [
+          if (icon != null)
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Icon(icon, size: 32),
+            ),
+          if (title != null)
+            Text(
+              title!,
+              style: const TextStyle(
+                color: ArknightsColors.black,
+                fontWeight: FontWeight.normal,
+                fontSize: 32,
+              ),
+            ),
+        ]),
+      ),
+    ]);
+  }
+}
