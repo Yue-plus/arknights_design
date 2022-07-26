@@ -1,20 +1,54 @@
 import 'package:flutter/widgets.dart' show IconData;
 
 class ArknightsIcons {
-  static IconData _arknightsIconData(int codePoint) {
-    return IconData(
-      codePoint,
-      fontFamily: 'ArknightsIcons',
-      fontPackage: 'arknights_design',
-    );
-  }
+  /// 阻止本类被实例化或被继承。
+  const ArknightsIcons._();
 
-  static IconData caster  = _arknightsIconData(0xe900);
-  static IconData medic   = _arknightsIconData(0xe901);
-  static IconData pioneer = _arknightsIconData(0xe902);
-  static IconData sniper  = _arknightsIconData(0xe903);
-  static IconData special = _arknightsIconData(0xe904);
-  static IconData support = _arknightsIconData(0xe905);
-  static IconData tank    = _arknightsIconData(0xe906);
-  static IconData warrior = _arknightsIconData(0xe907);
+  static const IconData caster = IconData(
+    0xe900,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData medic = IconData(
+    0xe901,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData pioneer = IconData(
+    0xe902,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData sniper = IconData(
+    0xe903,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData special = IconData(
+    0xe904,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData support = IconData(
+    0xe905,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData tank = IconData(
+    0xe906,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
+
+  static const IconData warrior = IconData(
+    0xe907,
+    fontFamily: 'ArknightsIcons',
+    fontPackage: 'arknights_design',
+  );
 }
