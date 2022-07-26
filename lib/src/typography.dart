@@ -4,11 +4,16 @@ import 'package:arknights_design/arknights_design.dart';
 
 /// 创建一个用于排版的可滚动的容器。
 class Typography extends StatelessWidget {
-  const Typography({Key? key, this.children, this.width, this.height})
-      : super(key: key);
+  const Typography({
+    Key? key,
+    this.width,
+    this.height,
+    this.color,
+    this.children,
+  }) : super(key: key);
 
   final double? width, height;
-
+  final Color? color;
   final List<Widget>? children;
 
   @override
@@ -19,7 +24,7 @@ class Typography extends StatelessWidget {
         child: Container(
           width: width,
           height: height,
-          color: const Color(0x22FFFFFF),
+          color: color ?? const Color(0x22FFFFFF),
           margin: const EdgeInsets.all(8),
           padding: const EdgeInsets.all(8),
           child: ListView(
@@ -112,19 +117,20 @@ class H6 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 23);
 }
 
-/// 文本段落
-class P extends StatelessWidget {
-  const P({Key? key, required this.text}) : super(key: key);
+/// 文本
+class Span extends StatelessWidget {
+  const Span(this.text, {Key? key}) : super(key: key);
 
   final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: const TextStyle(
-      color: ArknightsColors.white,
-      fontSize: 18,
-      fontWeight: FontWeight.normal,
-      decoration: TextDecoration.none,
-    ));
+    return Text(text,
+        style: const TextStyle(
+          color: ArknightsColors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.normal,
+          decoration: TextDecoration.none,
+        ));
   }
 }
