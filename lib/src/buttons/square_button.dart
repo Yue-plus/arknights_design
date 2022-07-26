@@ -58,7 +58,10 @@ class _SquareButtonStatus extends State<SquareButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.icons != null)
-              Icon(widget.icons, color: ArknightsColors.white),
+              Padding(
+                padding: EdgeInsets.only(right: widget.text != "" ? 8 : 0),
+                child: Icon(widget.icons, color: ArknightsColors.white),
+              ),
             if (widget.text != "")
               Text(
                 widget.text,
