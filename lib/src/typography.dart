@@ -4,7 +4,10 @@ import 'package:arknights_design/arknights_design.dart';
 
 /// 创建一个用于排版的可滚动的容器。
 class Typography extends StatelessWidget {
-  const Typography({Key? key, this.children}) : super(key: key);
+  const Typography({Key? key, this.children, this.width, this.height})
+      : super(key: key);
+
+  final double? width, height;
 
   final List<Widget>? children;
 
@@ -14,11 +17,13 @@ class Typography extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
         child: Container(
-          width: double.infinity,
+          width: width,
+          height: height,
           color: const Color(0x22FFFFFF),
           margin: const EdgeInsets.all(8),
           padding: const EdgeInsets.all(8),
           child: ListView(
+            controller: ScrollController(),
             children: children ?? [],
           ),
         ),
@@ -47,6 +52,7 @@ class _TitleText extends StatelessWidget {
   }
 }
 
+/// 一级标题
 class H1 extends StatelessWidget {
   const H1(this.text, {Key? key}) : super(key: key);
 
@@ -56,6 +62,7 @@ class H1 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 48);
 }
 
+/// 二级标题
 class H2 extends StatelessWidget {
   const H2(this.text, {Key? key}) : super(key: key);
 
@@ -65,6 +72,7 @@ class H2 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 42);
 }
 
+/// 三级标题
 class H3 extends StatelessWidget {
   const H3(this.text, {Key? key}) : super(key: key);
 
@@ -74,6 +82,7 @@ class H3 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 38);
 }
 
+/// 四级标题
 class H4 extends StatelessWidget {
   const H4(this.text, {Key? key}) : super(key: key);
 
@@ -83,6 +92,7 @@ class H4 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 32);
 }
 
+/// 五级标题
 class H5 extends StatelessWidget {
   const H5(this.text, {Key? key}) : super(key: key);
 
@@ -92,6 +102,7 @@ class H5 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 28);
 }
 
+/// 六级标题
 class H6 extends StatelessWidget {
   const H6(this.text, {Key? key}) : super(key: key);
 
@@ -101,3 +112,19 @@ class H6 extends StatelessWidget {
   Widget build(BuildContext context) => _TitleText(text, fontSize: 23);
 }
 
+/// 文本段落
+class P extends StatelessWidget {
+  const P({Key? key, required this.text}) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: const TextStyle(
+      color: ArknightsColors.white,
+      fontSize: 18,
+      fontWeight: FontWeight.normal,
+      decoration: TextDecoration.none,
+    ));
+  }
+}
