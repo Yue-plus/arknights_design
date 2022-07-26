@@ -14,4 +14,5 @@ export 'src/colors.dart';
 export 'src/icons.dart';
 export 'src/page.dart';
 export 'src/scaffold.dart';
+export 'src/side_bar.dart';
 export 'src/typography.dart';

@@ -24,6 +24,7 @@ class _ArknightsAppBarState extends State<ArknightsAppBar> {
     return widget.leading ??
         SquareButton(
           icons: FluentIcons.back,
+          width: 128,
           onPressed: () => Navigator.pop(context),
         );
   }

@@ -6,11 +6,14 @@ class ArknightsPageScaffold extends StatefulWidget {
   const ArknightsPageScaffold({
     Key? key,
     this.appBar,
+    this.sideBar,
     this.body,
     this.appBackgroundImage,
   }) : super(key: key);
 
   final Widget? appBar;
+
+  final Widget? sideBar;
 
   final Widget? body;
 
@@ -21,14 +24,6 @@ class ArknightsPageScaffold extends StatefulWidget {
 }
 
 class _ArknightsPageScaffoldStatus extends State<ArknightsPageScaffold> {
-  Widget appBar(BuildContext context) {
-    if (widget.appBar != null) {
-      return widget.appBar!;
-    } else {
-      return const ArknightsAppBar();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     DecorationImage? appBackgroundImage = const DecorationImage(
@@ -55,9 +50,16 @@ class _ArknightsPageScaffoldStatus extends State<ArknightsPageScaffold> {
       child: Column(children: [
         Padding(
           padding: const EdgeInsets.all(8),
-          child: appBar(context),
+          child: widget.appBar ?? const ArknightsAppBar(),
         ),
-        if (widget.body != null) Expanded(child: widget.body!),
+        Expanded(child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (widget.sideBar != null) widget.sideBar!,
+            if (widget.body != null) Expanded(child: widget.body!),
+          ],
+        )),
       ]),
     );
   }
