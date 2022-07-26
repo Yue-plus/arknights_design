@@ -9,7 +9,7 @@ class SquareButton extends StatefulWidget {
     this.color = ArknightsColors.darkGrey,
     this.shadowColor = ArknightsColors.gray,
     this.boxShadow,
-    this.width = 128,
+    this.width,
     this.onPressed,
     this.onLongPressed,
   }) : super(key: key);
