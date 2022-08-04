@@ -10,6 +10,7 @@ export 'src/app_bar.dart';
 export 'src/buttons/base_button.dart';
 export 'src/buttons/icon_button.dart';
 export 'src/buttons/square_button.dart';
+export 'src/switchs/base_switch.dart';
 export 'src/colors.dart';
 export 'src/icons.dart';
 export 'src/page.dart';
