@@ -10,8 +10,9 @@ class BaseSwitch extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onChange(!state),
-      child: Container(
+      child: AnimatedContainer(
         color: Color(state ? 0xFF00FF00 : 0xFFFF0000),
+        duration: const Duration(milliseconds: 30),
         child: Text(state ? 'Open' : 'Close'),
       ),
     );
