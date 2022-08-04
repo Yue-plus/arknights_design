@@ -37,100 +37,155 @@ class Typography extends StatelessWidget {
   }
 }
 
-class _TitleText extends StatelessWidget {
-  const _TitleText(this.text, {Key? key, this.fontSize}) : super(key: key);
+/// 标题基类
+class _Title extends StatelessWidget {
+  const _Title(this.text, {Key? key}) : super(key: key);
 
-  final String? text;
-  final double? fontSize;
+  final String text;
+  final double fontSize = 48;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text ?? "",
-      style: TextStyle(
-        color: ArknightsColors.white,
-        fontSize: fontSize ?? 32,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 16, 0, 8),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: ArknightsColors.white,
+          fontSize: fontSize,
+          fontWeight: FontWeight.normal,
+          fontFamily: '微软雅黑',
+          decoration: TextDecoration.none,
+        ),
       ),
     );
   }
 }
 
 /// 一级标题
-class H1 extends StatelessWidget {
-  const H1(this.text, {Key? key}) : super(key: key);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) => _TitleText(text, fontSize: 48);
+class H1 extends _Title {
+  const H1(super.text, {Key? key}) : super(key: key);
 }
 
 /// 二级标题
-class H2 extends StatelessWidget {
-  const H2(this.text, {Key? key}) : super(key: key);
-
-  final String text;
+class H2 extends _Title {
+  const H2(super.text, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => _TitleText(text, fontSize: 42);
+  double get fontSize => 42;
 }
 
 /// 三级标题
-class H3 extends StatelessWidget {
-  const H3(this.text, {Key? key}) : super(key: key);
-
-  final String text;
+class H3 extends _Title {
+  const H3(super.text, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => _TitleText(text, fontSize: 38);
+  double get fontSize => 38;
 }
 
 /// 四级标题
-class H4 extends StatelessWidget {
-  const H4(this.text, {Key? key}) : super(key: key);
-
-  final String text;
+class H4 extends _Title {
+  const H4(super.text, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => _TitleText(text, fontSize: 32);
+  double get fontSize => 32;
 }
 
 /// 五级标题
-class H5 extends StatelessWidget {
-  const H5(this.text, {Key? key}) : super(key: key);
-
-  final String text;
+class H5 extends _Title {
+  const H5(super.text, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => _TitleText(text, fontSize: 28);
+  double get fontSize => 28;
 }
 
 /// 六级标题
-class H6 extends StatelessWidget {
-  const H6(this.text, {Key? key}) : super(key: key);
-
-  final String text;
+class H6 extends _Title {
+  const H6(super.text, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => _TitleText(text, fontSize: 23);
+  double get fontSize => 23;
 }
+
+/// 普通文本样式
+const _normalTextStyle = TextStyle(
+  color: ArknightsColors.white,
+  fontSize: 18,
+  fontWeight: FontWeight.normal,
+  fontFamily: '微软雅黑',
+  decoration: TextDecoration.none,
+);
 
 /// 文本
 class Span extends StatelessWidget {
-  const Span(this.text, {Key? key}) : super(key: key);
+  const Span(this.text, {Key? key, this.style}) : super(key: key);
+
+  final String text;
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: style ?? _normalTextStyle);
+  }
+}
+
+/// 分割线
+class Hr extends StatelessWidget {
+  const Hr({Key? key, this.color}) : super(key: key);
+
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 4,
+      margin: const EdgeInsets.fromLTRB(0, 4, 0, 4),
+      color: color ?? ArknightsColors.gray,
+    );
+  }
+}
+
+/// 代码
+class Code extends StatelessWidget {
+  const Code(this.code, {Key? key}) : super(key: key);
+
+  final String code;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      code,
+      style: const TextStyle(
+        color: ArknightsColors.white,
+        backgroundColor: ArknightsColors.gray,
+        fontSize: 18,
+        fontWeight: FontWeight.normal,
+        fontFamily: 'Lucida Console',
+        decoration: TextDecoration.none,
+      ),
+    );
+  }
+}
+
+/// 划删除线的文本
+class Del extends StatelessWidget {
+  const Del(this.text, {Key? key}) : super(key: key);
 
   final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,
-        style: const TextStyle(
-          color: ArknightsColors.white,
-          fontSize: 18,
-          fontWeight: FontWeight.normal,
-          decoration: TextDecoration.none,
-        ));
+    return Text(
+      text,
+      style: const TextStyle(
+        color: ArknightsColors.white,
+        fontSize: 18,
+        fontFamily: '微软雅黑',
+        fontWeight: FontWeight.normal,
+        decoration: TextDecoration.lineThrough,
+        decorationStyle: TextDecorationStyle.solid,
+        decorationColor: ArknightsColors.white,
+      ),
+    );
   }
 }
