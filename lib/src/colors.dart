@@ -17,7 +17,28 @@ class ArknightsColors {
 
   /// 灰色
   static const Color gray = Color(0xFF525252);
+
+  /// 深灰色
   static const Color darkGrey = Color(0xFF313131);
-  static const Color blue = Color(0xFF22BBFF);
+
+  /// 粉色
+  static const Color pink = Color(0xFFEF4851);
+
+  /// 红色
+  static const Color red = Color(0xFFBF1A18);
+
+  /// 橙色
+  static const Color orange = Color(0xFFFF9203);
+
+  /// 黄色
   static const Color yellow = Color(0xFFFFEE22);
+
+  /// 绿色
+  static const Color green = Color(0xFFB1EC35);
+
+  /// 蓝色
+  static const Color blue = Color(0xFF22BBFF);
+
+  /// 紫色
+  static const Color purple = Color(0xFF6F43FF);
 }
