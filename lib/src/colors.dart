@@ -36,6 +36,9 @@ class ArknightsColors {
   /// 绿色
   static const Color green = Color(0xFFB1EC35);
 
+  /// 青色
+  static const Color teal = Color(0xFF6AD49A);
+
   /// 蓝色
   static const Color blue = Color(0xFF22BBFF);
 
