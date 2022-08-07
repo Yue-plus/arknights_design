@@ -2,9 +2,9 @@ import 'dart:ui' show Color;
 
 import 'package:arknights_design/arknights_design.dart';
 
-class ArknightsColors {
+class Colors {
   /// 阻止本类被实例化或被继承。
-  const ArknightsColors._();
+  const Colors._();
 
   /// 透明色。在动画中使用会导致奇怪的效果。
   static const Color transparent = Color(0x00000000);

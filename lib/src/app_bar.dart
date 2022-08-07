@@ -11,7 +11,7 @@ class ArknightsAppBar extends StatefulWidget {
   final List<Widget>? actions;
 
   final TextStyle appBarTextStyle = const TextStyle(
-    color: ArknightsColors.blue,
+    color: Colors.blue,
     fontSize: 28,
   );
 
@@ -69,7 +69,7 @@ class ArknightsAppBarTitle extends StatelessWidget {
             Text(
               title!,
               style: const TextStyle(
-                color: ArknightsColors.black,
+                color: Colors.black,
                 fontWeight: FontWeight.normal,
                 fontSize: 32,
               ),

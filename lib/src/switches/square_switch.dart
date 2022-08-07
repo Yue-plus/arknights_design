@@ -21,7 +21,7 @@ class SquareSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextStyle textStyle = TextStyle(
-      color: ArknightsColors.white,
+      color: Colors.white,
       fontSize: height / 2,
       fontFamily: '黑体',
       fontWeight: FontWeight.normal,
@@ -36,7 +36,7 @@ class SquareSwitch extends StatelessWidget {
         duration: const Duration(milliseconds: 160),
         // padding: EdgeInsets.all(3),
         decoration: BoxDecoration(
-          color: state ? ArknightsColors.blue : ArknightsColors.gray,
+          color: state ? Colors.blue : Colors.gray,
           // boxShadow: const [
           //   BoxShadow(color: ArknightsColors.black),
           //   BoxShadow(
@@ -64,7 +64,7 @@ class SquareSwitch extends StatelessWidget {
               child: Container(
                 width: width / 2 - 4,
                 height: height - 8,
-                color: ArknightsColors.white,
+                color: Colors.white,
               ),
             ),
           ],

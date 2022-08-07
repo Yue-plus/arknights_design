@@ -11,12 +11,12 @@ import 'page.dart';
 /// 如果你看到使用此文本样式的文本，请考虑将文本放入 [Arknights] Widget 中
 /// （或者另外声明一个 [DefaultTextStyle] Widget）。
 const TextStyle _errorTextStyle = TextStyle(
-  color: ArknightsColors.blue,
+  color: Colors.blue,
   fontFamily: 'monospace',
   fontSize: 48.0,
   fontWeight: FontWeight.w900,
   decoration: TextDecoration.underline,
-  decorationColor: ArknightsColors.yellow,
+  decorationColor: Colors.yellow,
   decorationStyle: TextDecorationStyle.double,
   debugLabel: '应急样式；考虑把你的文字放到一个明日方舟主题设计 Widget 里',
 );
@@ -188,7 +188,7 @@ class _ArknightsAppState extends State<ArknightsApp> {
     // 因为这个颜色属性只在旧版 Android 系统上用于在 Android 的切换 UI 中为 appbar 着色。
     //
     // 蓝色（0xFF22BBFF）为默认主题的主要颜色。
-    final Color arknightsColor = widget.color ?? ArknightsColors.blue;
+    final Color arknightsColor = widget.color ?? Colors.blue;
 
     return WidgetsApp(
       navigatorKey: widget.navigatorKey,

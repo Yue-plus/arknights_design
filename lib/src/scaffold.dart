@@ -44,7 +44,7 @@ class _ArknightsPageScaffoldStatus extends State<ArknightsPageScaffold> {
     return Container(
       // color: ArknightsColors.black,
       decoration: BoxDecoration(
-        color: ArknightsColors.black,
+        color: Colors.black,
         image: appBackgroundImage,
       ),
       child: Column(children: [

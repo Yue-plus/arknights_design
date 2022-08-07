@@ -6,8 +6,8 @@ class SquareButton extends StatefulWidget {
     Key? key,
     this.icons,
     this.text = "",
-    this.color = ArknightsColors.darkGrey,
-    this.shadowColor = ArknightsColors.gray,
+    this.color = Colors.darkGrey,
+    this.shadowColor = Colors.gray,
     this.boxShadow,
     this.width,
     this.onPressed,
@@ -43,11 +43,11 @@ class _SquareButtonStatus extends State<SquareButton> {
         margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: !isActive ? widget.color : ArknightsColors.gray,
+          color: !isActive ? widget.color : Colors.gray,
           boxShadow: widget.boxShadow ??
               [
                 BoxShadow(
-                  color: !isActive ? widget.shadowColor : ArknightsColors.white,
+                  color: !isActive ? widget.shadowColor : Colors.white,
                   offset: const Offset(2, 12),
                   blurRadius: 8,
                 )
@@ -60,13 +60,13 @@ class _SquareButtonStatus extends State<SquareButton> {
             if (widget.icons != null)
               Padding(
                 padding: EdgeInsets.only(right: widget.text != "" ? 8 : 0),
-                child: Icon(widget.icons, color: ArknightsColors.white),
+                child: Icon(widget.icons, color: Colors.white),
               ),
             if (widget.text != "")
               Text(
                 widget.text,
                 style: const TextStyle(
-                  color: ArknightsColors.white,
+                  color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                   decoration: TextDecoration.none,

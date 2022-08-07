@@ -51,7 +51,7 @@ class _Title extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: ArknightsColors.white,
+          color: Colors.white,
           fontSize: fontSize,
           fontWeight: FontWeight.normal,
           fontFamily: '微软雅黑',
@@ -109,7 +109,7 @@ class H6 extends _Title {
 
 /// 普通文本样式
 const _normalTextStyle = TextStyle(
-  color: ArknightsColors.white,
+  color: Colors.white,
   fontSize: 18,
   fontWeight: FontWeight.normal,
   fontFamily: '微软雅黑',
@@ -140,7 +140,7 @@ class Hr extends StatelessWidget {
     return Container(
       height: 4,
       margin: const EdgeInsets.fromLTRB(0, 4, 0, 4),
-      color: color ?? ArknightsColors.gray,
+      color: color ?? Colors.gray,
     );
   }
 }
@@ -156,8 +156,8 @@ class Code extends StatelessWidget {
     return Text(
       code,
       style: const TextStyle(
-        color: ArknightsColors.white,
-        backgroundColor: ArknightsColors.gray,
+        color: Colors.white,
+        backgroundColor: Colors.gray,
         fontSize: 18,
         fontWeight: FontWeight.normal,
         fontFamily: 'Lucida Console',
@@ -178,13 +178,13 @@ class Del extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        color: ArknightsColors.white,
+        color: Colors.white,
         fontSize: 18,
         fontFamily: '微软雅黑',
         fontWeight: FontWeight.normal,
         decoration: TextDecoration.lineThrough,
         decorationStyle: TextDecorationStyle.solid,
-        decorationColor: ArknightsColors.white,
+        decorationColor: Colors.white,
       ),
     );
   }
