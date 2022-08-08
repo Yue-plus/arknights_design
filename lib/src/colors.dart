@@ -21,26 +21,8 @@ enum ColorGrade {
   darkest,
 }
 
-class ArknightsGradedColor extends ColorSwatch<ColorGrade> {
-  const ArknightsGradedColor(int color, Map<ColorGrade, Color> swatch)
-      : super(color, swatch);
-
-  Color get lightest =>
-      Color(this[ColorGrade.lightest]!.value);
-
-  Color get lighter => Color(this[ColorGrade.lighter]!.value);
-
-  Color get light => Color(this[ColorGrade.light]!.value);
-
-  // @override
-  // Color get value => Color(this.value);
-
-  Color get dark => Color(this[ColorGrade.dark]!.value);
-
-  Color get darker => Color(this[ColorGrade.darker]!.value);
-
-  Color get darkest => Color(this[ColorGrade.darkest]!.value);
-  
+/// 透明度分级调整
+mixin _OpacityGrade on Color {
   /// 将透明度调整为 87%
   Color get opacity87 => withOpacity(.87);
 
@@ -58,6 +40,30 @@ class ArknightsGradedColor extends ColorSwatch<ColorGrade> {
 
   /// 将透明度调整为 12%
   Color get opacity12 => withOpacity(.12);
+}
+
+class ArknightsColor extends Color with _OpacityGrade {
+  ArknightsColor(super.value);
+}
+
+class ArknightsGradedColor extends ColorSwatch<ColorGrade> with _OpacityGrade {
+  const ArknightsGradedColor(int color, Map<ColorGrade, Color> swatch)
+      : super(color, swatch);
+
+  Color get lightest => this[ColorGrade.lightest]!;
+
+  Color get lighter => this[ColorGrade.lighter]!;
+
+  Color get light => this[ColorGrade.light]!;
+
+  // @override
+  // Color get value => Color(this.value);
+
+  Color get dark => this[ColorGrade.dark]!;
+
+  Color get darker => this[ColorGrade.darker]!;
+
+  Color get darkest => this[ColorGrade.darkest]!;
 }
 
 class Colors {
@@ -82,7 +88,7 @@ class Colors {
   /// 粉色
   /// 此颜色取自“采购凭证（红票）”；
   /// 此颜色没有定义 [ColorGrade] ，需要的话请使用 [Colors.red]
-  static const Color pink = Color(0xFFEF4851);
+  static ArknightsColor pink = ArknightsColor(0xFFEF4851);
 
   /// 红色
   static const ArknightsGradedColor red = ArknightsGradedColor(
