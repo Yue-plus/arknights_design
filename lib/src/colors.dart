@@ -73,11 +73,165 @@ class Colors {
   /// 透明色。在动画中使用会导致奇怪的效果。
   static const Color transparent = Color(0x00000000);
 
-  /// 纯黑
+  /// 纯黑。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
   static const Color black = Color(0xFF000000);
 
+  /// 黑色，透明度为 **87%**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
+  static const Color black87 = Color(0xDD000000);
+
+  /// 黑色，透明度为 **54%**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
+  static const Color black54 = Color(0x8A000000);
+
+  /// 黑色，透明度为 **45%**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
+  static const Color black45 = Color(0x73000000);
+
+  /// 黑色，透明度为 **38%**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
+  static const Color black38 = Color(0x61000000);
+
+  /// 黑色，透明度为 **26%**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
+  static const Color black26 = Color(0x42000000);
+
+  /// 黑色，透明度为 **12%**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.blacks.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的黑色：
+  ///   [black87]、[black54]、[black45]、[black38]、[black26]、[black12]。
+  static const Color black12 = Color(0x1F000000);
+
   /// 纯白
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
   static const Color white = Color(0xFFFFFFFF);
+
+  /// 白色，透明度为 **70**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white70 = Color(0xB3FFFFFF);
+
+  /// 白色，透明度为 **60**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white60 = Color(0x99FFFFFF);
+
+  /// 白色，透明度为 **54**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white54 = Color(0x8AFFFFFF);
+
+  /// 白色，透明度为 **38**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white38 = Color(0x62FFFFFF);
+
+  /// 白色，透明度为 **30**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white30 = Color(0x4DFFFFFF);
+
+  /// 白色，透明度为 **24**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white24 = Color(0x3DFFFFFF);
+
+  /// 白色，透明度为 **12**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white12 = Color(0x1FFFFFFF);
+
+  /// 白色，透明度为 **10**。
+  ///
+  /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/Colors.whites.png)
+  ///
+  /// 另见：
+  ///
+  /// * 透明度分级的白色：[white70]、[white60]、[white54]、[white38]、[white30]、
+  ///   [white12]、[white10]。
+  static const Color white10 = Color(0x1AFFFFFF);
 
   /// 灰色
   static const Color gray = Color(0xFF525252);
