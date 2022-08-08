@@ -233,8 +233,8 @@ class Colors {
   ///   [white12]、[white10]。
   static const Color white10 = Color(0x1AFFFFFF);
 
-  /// 灰色
-  static const Color gray = Color(0xFF525252);
+  /// 浅灰色
+  static const Color lightGrey = Color(0xFF525252);
 
   /// 深灰色
   static const Color darkGrey = Color(0xFF313131);

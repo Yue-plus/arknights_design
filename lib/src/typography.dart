@@ -140,7 +140,7 @@ class Hr extends StatelessWidget {
     return Container(
       height: 4,
       margin: const EdgeInsets.fromLTRB(0, 4, 0, 4),
-      color: color ?? Colors.gray,
+      color: color ?? Colors.lightGrey,
     );
   }
 }
@@ -157,7 +157,7 @@ class Code extends StatelessWidget {
       code,
       style: const TextStyle(
         color: Colors.white,
-        backgroundColor: Colors.gray,
+        backgroundColor: Colors.lightGrey,
         fontSize: 18,
         fontWeight: FontWeight.normal,
         fontFamily: 'Lucida Console',

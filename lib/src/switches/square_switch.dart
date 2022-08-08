@@ -36,7 +36,7 @@ class SquareSwitch extends StatelessWidget {
         duration: const Duration(milliseconds: 160),
         // padding: EdgeInsets.all(3),
         decoration: BoxDecoration(
-          color: state ? Colors.blue : Colors.gray,
+          color: state ? Colors.blue : Colors.lightGrey,
           // boxShadow: const [
           //   BoxShadow(color: ArknightsColors.black),
           //   BoxShadow(

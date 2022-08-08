@@ -27,10 +27,10 @@ class IconButtonStatus extends State<IconButton> {
         child: Icon(
           widget.iconData,
           size: widget.size ?? 36,
-          color: !isActive ? Colors.white : Colors.gray,
+          color: !isActive ? Colors.white : Colors.lightGrey,
           shadows: const [
             BoxShadow(
-              color: Colors.gray,
+              color: Colors.lightGrey,
               offset: Offset(0, 12),
               blurRadius: 3,
               // spreadRadius: 6,

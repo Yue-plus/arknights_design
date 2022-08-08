@@ -7,7 +7,7 @@ class SquareButton extends StatefulWidget {
     this.icons,
     this.text = "",
     this.color = Colors.darkGrey,
-    this.shadowColor = Colors.gray,
+    this.shadowColor = Colors.lightGrey,
     this.boxShadow,
     this.width,
     this.onPressed,
@@ -43,7 +43,7 @@ class _SquareButtonStatus extends State<SquareButton> {
         margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: !isActive ? widget.color : Colors.gray,
+          color: !isActive ? widget.color : Colors.lightGrey,
           boxShadow: widget.boxShadow ??
               [
                 BoxShadow(
