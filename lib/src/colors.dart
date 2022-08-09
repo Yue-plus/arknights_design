@@ -19,6 +19,9 @@ enum ColorGrade {
 
   /// 最暗
   darkest,
+
+  /// 高对比色
+  contrast,
 }
 
 /// 透明度分级调整
@@ -56,14 +59,39 @@ class ArknightsGradedColor extends ColorSwatch<ColorGrade> with _OpacityGrade {
 
   Color get light => this[ColorGrade.light]!;
 
-  // @override
-  // Color get value => Color(this.value);
-
   Color get dark => this[ColorGrade.dark]!;
 
   Color get darker => this[ColorGrade.darker]!;
 
   Color get darkest => this[ColorGrade.darkest]!;
+
+  Color get contrast => this[ColorGrade.contrast]!;
+}
+
+/// 256 种灰色！
+///
+/// 合法值为 1~255（也可以写为 0x00~0xFF），溢出部分会自动求模。
+///
+/// 使用示例：
+///
+/// ```dart
+/// Color c = Grayscale(0x01);    // Color(0xFF010101);
+/// Color c = Grayscale(255);     // Color(0xFFFFFFFF);
+/// Color c = Grayscale(114514);  // Color(0xFF525252);
+/// Color c = Grayscale(-233);    // Color(0xFF171717);
+/// ```
+///
+/// 另见：
+/// * [Colors.grey]。
+class Grayscale extends Color {
+  Grayscale(int i) : super(_getGrayscale(i).value);
+
+  static Color _getGrayscale(int i) {
+    int g = i & 0xFF;
+    return Color((0xFF000000 | g << 16 | g << 8 | g << 0) & 0xFFFFFFFF);
+  }
+
+  Color operator [](int i) => _getGrayscale(i);
 }
 
 class Colors {
@@ -233,6 +261,19 @@ class Colors {
   ///   [white12]、[white10]。
   static const Color white10 = Color(0x1AFFFFFF);
 
+  /// 灰色，可调整灰阶，示例：
+  ///
+  /// ```dart
+  /// Color c = Colors.grey[0x01];    // Color(0xFF010101);
+  /// Color c = Colors.grey[255];     // Color(0xFFFFFFFF);
+  /// Color c = Colors.grey[114514];  // Color(0xFF525252);
+  /// Color c = Colors.grey[-233];    // Color(0xFF171717);
+  /// ```
+  ///
+  /// 另见：
+  /// * [Grayscale]。
+  static Grayscale grey = Grayscale(127);
+
   /// 浅灰色
   static const Color lightGrey = Color(0xFF525252);
 
@@ -254,6 +295,7 @@ class Colors {
       ColorGrade.dark: Color(0xFF8F1412),
       ColorGrade.darker: Color(0xFF5F0D0C),
       ColorGrade.darkest: Color(0xFF300706),
+      ColorGrade.contrast: Color(0xFFFFFFFF),
     },
   );
 
@@ -267,6 +309,7 @@ class Colors {
       ColorGrade.dark: Color(0xFFC36F00),
       ColorGrade.darker: Color(0xFF824A00),
       ColorGrade.darkest: Color(0xFF412500),
+      ColorGrade.contrast: Color(0xFF220B02),
     },
   );
 
@@ -280,6 +323,7 @@ class Colors {
       ColorGrade.dark: Color(0xFFDAC800),
       ColorGrade.darker: Color(0xFF918500),
       ColorGrade.darkest: Color(0xFF494300),
+      ColorGrade.contrast: Color(0xFF172702),
     },
   );
 
@@ -293,6 +337,7 @@ class Colors {
       ColorGrade.dark: Color(0xFF8EC713),
       ColorGrade.darker: Color(0xFF5F850C),
       ColorGrade.darkest: Color(0xFF2F4206),
+      ColorGrade.contrast: Color(0xFF1E3A40),
     },
   );
 
@@ -306,6 +351,7 @@ class Colors {
       ColorGrade.dark: Color(0xFF35B870),
       ColorGrade.darker: Color(0xFF247B4B),
       ColorGrade.darkest: Color(0xFF123D25),
+      ColorGrade.contrast: Color(0xFF100328),
     },
   );
 
@@ -319,6 +365,7 @@ class Colors {
       ColorGrade.dark: Color(0xFF0095DA),
       ColorGrade.darker: Color(0xFF006391),
       ColorGrade.darkest: Color(0xFF003249),
+      ColorGrade.contrast: Color(0xFF010E2D),
     },
   );
 
@@ -332,6 +379,7 @@ class Colors {
       ColorGrade.dark: Color(0xFF3800F1),
       ColorGrade.darker: Color(0xFF2500A1),
       ColorGrade.darkest: Color(0xFF130050),
+      ColorGrade.contrast: Color(0xFF000000),
     },
   );
 }
