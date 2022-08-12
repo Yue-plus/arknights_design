@@ -14,6 +14,7 @@ export 'src/switches/base_switch.dart';
 export 'src/switches/square_switch.dart';
 export 'src/colors.dart';
 export 'src/icons.dart';
+export 'src/message.dart';
 export 'src/page.dart';
 export 'src/scaffold.dart';
 export 'src/side_bar.dart';
